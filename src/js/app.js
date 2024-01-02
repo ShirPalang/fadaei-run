@@ -18,6 +18,7 @@ setInterval(() => {
 }, 20)
 
 let index = 0
+
 setInterval(() => {
     if (index === frames.length - 1) {
         index = 0
@@ -27,11 +28,10 @@ setInterval(() => {
     character.children[0].src = frames[index]
 }, 130)
 
+let jumpPosition = 153
+let isUp = false
+
 document.body.addEventListener('keydown', e => {
-
-    let jumpPosition = 153
-    let isUp = false
-
 
     if (e.key === ' ' && !isJump) {
         jumpHandler(jumpPosition, isUp)
@@ -45,6 +45,16 @@ document.body.addEventListener('keydown', e => {
         isJump = false
     }, 1100);
 
+})
+
+document.body.addEventListener('touchstart' , ()=> {
+    jumpHandler(jumpPosition, isUp)
+
+    isJump = true
+
+    setTimeout(() => {
+        isJump = false
+    }, 1100);
 })
 
 const jumpHandler = (position , isUp) => {
