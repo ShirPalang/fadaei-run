@@ -16,4 +16,34 @@ body {
 .box {
   width: 1000px;
   height: 400px;
+}
+.box .map {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.box .map .background {
+  width: 100%;
+  height: 60%;
+}
+.box .map #zamin {
+  height: 40%;
+  display: flex;
+  position: absolute;
+}
+.box .map #zamin img {
+  height: 100%;
+}
+.box .map #character {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 47%;
+  bottom: 153px;
+  z-index: 999;
+}
+.box .map #character img {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
