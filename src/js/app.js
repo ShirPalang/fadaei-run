@@ -1,3 +1,4 @@
+// fadaei run
 const zamin = document.getElementById('zamin')
 const character = document.getElementById('character')
 
