@@ -34,6 +34,17 @@ body {
 }
 .box .map #zamin img {
   height: 100%;
+  width: 400px;
+}
+.box .map .enemy {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 400;
+  background-image: url("https://muziran.ir/wp-content/uploads/2022/09/download-2.jpg");
+  background-position: center;
+  background-size: cover;
+  bottom: 157px;
 }
 .box .map #character {
   width: 100px;

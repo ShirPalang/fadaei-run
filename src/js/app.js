@@ -8,7 +8,11 @@ let isJump = false
 
 
 setInterval(() => {
-    zamin.innerHTML += `<img src="public/images/zamin.jpg" alt="">`
+    const marginPositio = Math.floor(Math.random() * 400)
+    zamin.innerHTML += `<div>
+                <div class="enemy" style="margin-left: ${marginPositio}px"></div>
+                <img src="public/images/zamin.jpg" alt="">
+            </div>`
 }, 600)
 
 setInterval(() => {
@@ -47,20 +51,20 @@ document.body.addEventListener('keydown', e => {
 
 })
 
-document.body.addEventListener('touchstart' , ()=> {
+document.body.addEventListener('touchstart', () => {
     jumpHandler(jumpPosition, isUp)
 
     isJump = true
 
     setTimeout(() => {
         isJump = false
-    }, 1100);
+    }, 100);
 })
 
-const jumpHandler = (position , isUp) => {
+const jumpHandler = (position, isUp) => {
     const jumpDown = interval => {
         let toDown = setInterval(() => {
-            if (position === 300) {
+            if (position === 270) {
                 clearInterval(interval)
                 isUp = true
             }
@@ -73,11 +77,11 @@ const jumpHandler = (position , isUp) => {
             if (position === 153) {
                 clearInterval(toDown)
             }
-        }, 1)
+        }, 0.1)
     }
 
     let jumpUp = setInterval(() => {
-        if (position !== 300) {
+        if (position !== 270) {
             position += 1
             character.style.bottom = `${position}px`
             return false
